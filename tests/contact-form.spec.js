@@ -80,3 +80,13 @@ test('Brightfield case study card shows its image and links out', async ({ page 
   const loaded = await card.locator('img').evaluate(async (img) => { img.loading = 'eager'; await img.decode(); return img.naturalWidth; });
   expect(loaded).toBeGreaterThan(0);
 });
+
+test('coffee sample card is labeled as a sample and opens the sample site', async ({ page }) => {
+  await page.goto('/');
+  const card = page.locator('#work .work-card').filter({ hasText: 'Little Bend Coffee' });
+  await expect(card.getByText('Sample site')).toBeVisible();
+  const link = card.getByRole('link', { name: 'Little Bend Coffee' });
+  await expect(link).toHaveAttribute('href', 'samples/coffee/');
+  await page.goto('/samples/coffee/');
+  await expect(page.getByText('Little Bend Coffee is a made-up business')).toBeVisible();
+});
