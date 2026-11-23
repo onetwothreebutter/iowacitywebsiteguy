@@ -1,0 +1,20 @@
+{
+  "name": "iowacitywebsiteguy",
+  "description": "Iowa City Website Guy site",
+  "scripts": {
+    "test": "playwright test",
+    "test:live": "playwright test tests/live.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onetwothreebutter/iowacitywebsiteguy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onetwothreebutter/iowacitywebsiteguy/issues"
+  },
+  "homepage": "https://github.com/onetwothreebutter/iowacitywebsiteguy#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  },
+  "private": true
+}

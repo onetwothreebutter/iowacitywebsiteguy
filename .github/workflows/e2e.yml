@@ -1,0 +1,41 @@
+name: E2E tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Also submit the real form on the live site (sends a real email)"
+        type: boolean
+        default: false
+      live_url:
+        description: "Live site to test"
+        default: "https://iowacitywebsiteguy.vercel.app"
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Contact form tests (FormSubmit mocked)
+        run: npx playwright test
+      - name: Live contact form test
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.live }}
+        env:
+          LIVE_URL: ${{ inputs.live_url }}
+        run: npx playwright test tests/live.spec.js
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7
