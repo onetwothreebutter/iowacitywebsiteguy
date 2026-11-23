@@ -30,6 +30,7 @@ test('a filled-in form is sent and the visitor lands on the thanks page', async 
   await page.goto('/');
   await page.getByLabel('Your name').fill('Test Person');
   await page.getByLabel('Business name').fill('Test Bakery');
+  await page.getByLabel('Current website').fill('testbakery.com');
   await page.getByLabel('Phone or email').fill('test@example.com');
   await page.getByLabel('What does your website need?').fill('A menu page');
   await page.getByRole('button', { name: 'Ask for my free mockup' }).click();
@@ -43,9 +44,20 @@ test('a filled-in form is sent and the visitor lands on the thanks page', async 
   expect(sent[0].fields).toMatchObject({
     name: 'Test Person',
     business: 'Test Bakery',
+    website: 'testbakery.com',
     contact: 'test@example.com',
     message: 'A menu page',
   });
+});
+
+test('website field is optional and accepts an address without https', async ({ page }) => {
+  const sent = await mockFormSubmit(page);
+  await page.goto('/');
+  await page.getByLabel('Your name').fill('Test Person');
+  await page.getByLabel('Phone or email').fill('319-555-0100');
+  await page.getByRole('button', { name: 'Ask for my free mockup' }).click();
+  await expect(page).toHaveURL(/\/thanks\.html$/);
+  expect(sent[0].fields.website).toBe('');
 });
 
 test('required fields stop an empty form from sending', async ({ page }) => {

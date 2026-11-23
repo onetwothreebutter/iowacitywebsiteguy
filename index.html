@@ -238,6 +238,7 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
   font: inherit; font-size: 16px; font-weight: 400;
 }
 .contact-form input { min-height: 46px; }
+.contact-form ::placeholder { color: #78716c; opacity: 1; }
 .form-status { margin: 0; font-size: 15px; }
 .form-status:empty { display: none; }
 .form-status.ok { color: #166534; font-weight: 700; }
@@ -496,6 +497,9 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
         </label>
         <label><span>Business name <span class="optional">(optional)</span></span>
           <input type="text" name="business" autocomplete="organization">
+        </label>
+        <label><span>Current website <span class="optional">(optional)</span></span>
+          <input type="text" name="website" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" spellcheck="false" autocapitalize="off">
         </label>
         <label><span>Phone or email</span>
           <input type="text" name="contact" autocomplete="email" required>
