@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iowa City Website Guy | Websites for Iowa City small businesses</title>
+<meta name="description" content="Eric Johnson builds clean, fast, mobile-friendly websites for restaurants, shops, trades and offices around Iowa City. Ask for a free homepage mockup.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iowa City Website Guy">
+<meta property="og:title" content="Iowa City Website Guy">
+<meta property="og:description" content="Clean, fast, mobile-friendly websites for Iowa City small businesses. Ask for a free homepage mockup.">
+<link rel="canonical" href="https://iowacitywebsiteguy.com/">
+<meta property="og:url" content="https://iowacitywebsiteguy.com/">
+<!-- PLACEHOLDER: add a share image, <meta property="og:image" content="https://iowacitywebsiteguy.com/share.png"> -->
+<meta name="theme-color" content="#be123c">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Iowa City Website Guy",
+  "url": "https://iowacitywebsiteguy.com/",
+  "description": "Clean, fast, mobile-friendly websites for restaurants, shops, trades and offices around Iowa City.",
+  "founder": { "@type": "Person", "name": "Eric Johnson" },
+  "areaServed": { "@type": "City", "name": "Iowa City, Iowa" },
+  "telephone": "+1-319-382-2960",
+  "email": "eric@iowacitywebsiteguy.com"
+}
+</script>
+<style>
+:root {
+  --accent: #be123c;
+  --accent-dark: #881337;
+  --ink: #1c1917;
+  --body: #44403c;
+  --body-strong: #292524;
+  --muted-bg: #f5f5f4;
+  --rule: #e7e5e4;
+  --field-border: #78716c;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --gutter: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.5;
+}
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2 { margin: 0; font-family: var(--serif); font-weight: 700; }
+h3, p { margin: 0; }
+
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 10;
+  padding: 12px 16px; border-radius: 4px;
+  background: var(--ink); color: #ffffff; font-weight: 700; text-decoration: none;
+}
+.skip-link:focus { top: 12px; color: #ffffff; }
+
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Placeholders: search this file for "Placeholder:" to find every one */
+.placeholder {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px dashed #b98a1e; border-radius: 6px;
+  background: #fff4d1; color: #7a4f00;
+  font-size: 14px; font-style: italic; font-weight: 400; line-height: 1.4;
+}
+.placeholder-box {
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px;
+  border: 1.5px dashed #b98a1e; border-radius: 6px;
+  background: #fff4d1; color: #7a4f00;
+  font-size: 14px; font-style: italic; text-align: center;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 18px; border-radius: 4px;
+  background: var(--accent); color: #ffffff;
+  font-weight: 700; text-decoration: none;
+}
+.button:hover { background: var(--accent-dark); color: #ffffff; }
+.button-large { min-height: 56px; padding: 0 28px; font-size: 19px; }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--rule); }
+.site-header .wrap {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px 24px; padding-top: 14px; padding-bottom: 14px; font-size: 16px;
+}
+.brand {
+  font-family: var(--serif); font-size: 21px; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--ink); text-decoration: none;
+}
+.brand:hover { color: var(--ink); }
+.brand { display: inline-flex; line-height: 0; }
+.brand-logo { height: 54px; width: auto; display: block; }
+.site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+.nav-link {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--ink); font-weight: 600; text-decoration: none;
+}
+.nav-link:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding: 96px 0 88px; }
+.hero .wrap { display: flex; flex-direction: column; gap: 24px; }
+.eyebrow {
+  font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+h1 { font-size: clamp(3rem, 7.5vw, 6rem); line-height: 1; letter-spacing: -0.03em; }
+h1 span { display: block; }
+h1 .accent { color: var(--accent); }
+.lead { max-width: 720px; font-size: 22px; color: var(--body); }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 8px; }
+.phone-link { color: var(--ink); font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.phone-link:hover { color: var(--accent); }
+.contact-link { display: inline-flex; align-items: center; min-height: 44px; color: #ffffff; font-size: 22px; font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.contact-email { font-size: 18px; overflow-wrap: anywhere; }
+.contact-link:hover { color: #ffffff; text-decoration-thickness: 3px; }
+.call { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-weight: 600; }
+
+/* Question sections */
+.section { padding: 88px 0; }
+.section-alt { background: var(--muted-bg); }
+.section .wrap { display: flex; flex-direction: column; gap: 36px; }
+h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.025em; }
+.item-title { font-size: 22px; font-weight: 700; line-height: 1.3; }
+.item-text { color: var(--body); }
+
+.services {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 0 48px;
+}
+.services li {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding: 18px 0; border-top: 2px solid var(--ink);
+}
+
+.steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 36px 48px;
+}
+.steps li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; }
+.step-number {
+  font-family: var(--serif); font-size: 64px; font-weight: 700; line-height: 0.95;
+  color: var(--accent);
+}
+.step-body { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+
+.about { display: flex; flex-wrap: wrap; gap: 28px 40px; }
+.photo-slot { width: 200px; height: 200px; flex-shrink: 0; }
+.photo { object-fit: cover; border-radius: 6px; }
+.about-text { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.about-name { font-size: 24px; font-weight: 700; }
+.about-points {
+  margin: 4px 0 0; padding-left: 24px;
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: 20px; color: var(--body-strong);
+}
+
+.work {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px;
+}
+.work .placeholder-box { height: 190px; }
+
+.cost .wrap { gap: 24px; align-items: flex-start; }
+.cost-note { max-width: 720px; font-size: 22px; color: var(--body-strong); }
+.cost .wrap { align-items: stretch; }
+.cost-intro { max-width: 720px; font-size: 20px; color: var(--body); }
+.price-cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px;
+}
+.price-card {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 28px; border: 2px solid var(--ink); border-radius: 6px; background: #ffffff;
+}
+.price-name { font-family: var(--serif); font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; }
+.price-who { color: var(--body); }
+.price { padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.price-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; flex: 1; font-size: 17px; }
+.price-list li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: start; }
+.check { width: 22px; height: 22px; margin-top: 2px; fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.price-button { align-self: stretch; min-height: 50px; margin-top: 6px; }
+.care-plan {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;
+  padding: 24px 28px; border: 2px dashed var(--ink); border-radius: 6px; background: #ffffff;
+}
+.care-plan > div:first-child { flex: 1 1 320px; display: flex; flex-direction: column; gap: 6px; }
+.care-details { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.price-amount { font-family: var(--serif); font-size: 40px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+.price-from { font-size: 16px; font-weight: 600; color: var(--body); }
+.extra-work { font-size: 17px; color: var(--body); }
+
+/* Contact */
+.contact { padding: 88px 0; background: var(--accent); color: #ffffff; }
+.contact :focus-visible { outline-color: #ffffff; }
+.contact .wrap { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px 56px; }
+.contact-intro { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.contact h2 { font-size: clamp(2.5rem, 5.4vw, 4rem); line-height: 1.03; }
+.contact-intro p { font-size: 20px; }
+.contact-form {
+  flex: 1 1 380px; min-width: 0; margin: 0; padding: 28px; border-radius: 6px;
+  display: flex; flex-direction: column; gap: 14px;
+  background: #ffffff; color: var(--ink); font-size: 16px;
+}
+.contact-form :focus-visible { outline-color: var(--accent); outline-offset: 1px; }
+.contact-form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700; }
+.optional { font-weight: 400; color: #57534e; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%; padding: 0 12px;
+  border: 1px solid var(--field-border); border-radius: 4px;
+  background: #ffffff; color: var(--ink);
+  font: inherit; font-size: 16px; font-weight: 400;
+}
+.contact-form input { min-height: 46px; }
+.contact-form textarea { min-height: 120px; padding: 10px 12px; resize: vertical; }
+.submit {
+  min-height: 54px; border: 0; border-radius: 4px;
+  background: var(--ink); color: #ffffff;
+  font: inherit; font-size: 18px; font-weight: 700; cursor: pointer;
+}
+.submit:hover { background: #000000; }
+
+/* Footer */
+.site-footer { padding: 22px 0; background: var(--ink); color: #d6d3d1; font-size: 14px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; }
+
+/* Phones */
+@media (max-width: 600px) {
+  :root { --gutter: 20px; }
+  body { font-size: 17px; }
+  .brand { font-size: 19px; }
+  .brand-logo { height: 42px; }
+  .site-nav .nav-link { display: none; }
+  .site-nav .button { padding: 0 14px; }
+  .hero { padding: 56px 0 64px; }
+  .lead { font-size: 19px; }
+  .button-large { width: 100%; }
+  .section, .contact { padding: 64px 0; }
+  .section .wrap { gap: 28px; }
+  .item-title { font-size: 20px; }
+  .steps li { grid-template-columns: 44px minmax(0, 1fr); gap: 16px; }
+  .step-number { font-size: 52px; }
+  .photo-slot { width: 160px; height: 160px; }
+  .about-points { font-size: 18px; }
+  .cost-note { font-size: 19px; }
+  .price-card { padding: 22px; }
+  .price-name { font-size: 28px; }
+  .cost-intro { font-size: 18px; }
+  .contact-intro p { font-size: 18px; }
+  .contact-form { padding: 22px; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="brand-logo" role="img" aria-label="Iowa City Website Guy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346 88"><g transform="translate(8,8) scale(1.1)"><polygon points="45.7,9.5 47.0,9.5 47.1,11.1 48.3,12.2 47.3,13.6 47.6,16.1 48.3,17.9 51.2,19.2 51.8,20.6 53.6,22.6 53.9,23.8 55.7,24.9 56.0,26.3 55.6,28.4 54.5,29.2 54.3,30.9 51.7,32.3 48.4,32.8 47.9,34.8 49.3,36.4 49.1,38.4 48.0,39.5 47.8,41.2 45.5,42.4 45.3,44.4 44.4,44.1 42.7,41.8 41.9,41.9 30.0,42.2 18.6,42.3 9.2,42.1 8.2,40.6 8.7,37.7 7.8,35.2 7.9,32.4 6.4,31.4 6.2,29.9 6.7,28.5 6.1,26.6 5.0,25.9 3.5,20.8 2.0,18.4 2.7,16.7 3.0,14.5 3.6,13.7 2.5,12.6 2.8,10.6 2.4,9.7 3.5,9.5 45.7,9.5" fill="#be123c" stroke="#be123c" stroke-width="1.5" stroke-linejoin="round"/><g transform="translate(44.4 30.1) scale(0.7)"><path d="M0 0V25.5l6.2-5.9 4.4 9.6 4.6-2.1-4.3-9.4H19z" fill="#1c1917" stroke="#ffffff" stroke-width="3.6" stroke-linejoin="round" paint-order="stroke"/></g></g><g transform="translate(96,14)"><path d="M1.0 13.0V3.2H3.0V13.0Z M12.2 13.1Q10.8 13.1 9.8 12.5Q8.8 11.9 8.3 10.8Q7.7 9.6 7.7 8.1Q7.7 6.5 8.3 5.4Q8.8 4.3 9.8 3.7Q10.9 3.1 12.2 3.1Q13.6 3.1 14.6 3.7Q15.6 4.3 16.1 5.4Q16.7 6.5 16.7 8.1Q16.7 9.6 16.1 10.8Q15.6 11.9 14.6 12.5Q13.6 13.1 12.2 13.1ZM12.2 11.5Q12.9 11.5 13.5 11.1Q14.0 10.8 14.3 10.0Q14.6 9.3 14.6 8.1Q14.6 6.9 14.3 6.1Q14.0 5.4 13.5 5.0Q12.9 4.7 12.2 4.7Q11.5 4.7 11.0 5.0Q10.5 5.4 10.2 6.1Q9.9 6.9 9.9 8.1Q9.9 9.3 10.2 10.0Q10.5 10.8 11.0 11.1Q11.5 11.5 12.2 11.5Z M23.0 13.0 20.1 3.2H22.1L23.9 9.6L25.7 3.2H27.1L29.0 9.6L30.8 3.2H32.7L29.8 13.0H28.3L26.4 6.6L24.6 13.0Z M34.8 13.0 38.3 3.2H40.4L43.9 13.0H41.9L41.1 10.7H37.6L36.8 13.0ZM38.0 9.0H40.6L39.3 5.1Z  M58.3 13.1Q56.9 13.1 55.9 12.5Q55.0 11.8 54.4 10.7Q53.9 9.5 53.9 8.0Q53.9 6.4 54.4 5.3Q54.9 4.2 55.9 3.6Q56.9 3.1 58.3 3.1Q59.4 3.1 60.3 3.5Q61.1 3.9 61.7 4.7Q62.2 5.5 62.3 6.4H60.2Q60.1 5.9 59.9 5.5Q59.6 5.1 59.2 4.9Q58.8 4.7 58.2 4.7Q57.6 4.7 57.1 5.0Q56.6 5.3 56.3 6.1Q56.0 6.8 56.0 8.0Q56.0 9.8 56.6 10.7Q57.2 11.5 58.2 11.5Q58.8 11.5 59.2 11.2Q59.6 10.9 59.9 10.5Q60.1 10.1 60.2 9.6H62.3Q62.2 10.3 61.9 10.9Q61.7 11.5 61.2 12.0Q60.8 12.5 60.1 12.8Q59.3 13.1 58.3 13.1Z M67.0 13.0V3.2H69.0V13.0Z M76.2 13.0V4.9H73.3V3.2H81.1V4.9H78.2V13.0Z M88.4 13.0V8.8L85.0 3.2H87.1L89.3 7.1L91.6 3.2H93.7L90.3 8.8V13.0Z" fill="#be123c"/><path d="M9.8 52.0 2.1 25.7H9.6L14.6 46.9H14.6L15.6 41.7L20.3 25.7H25.1L30.7 47.0H30.6L31.8 41.0L36.1 25.7H39.1L31.0 52.0H25.8L20.6 31.8H20.6L19.7 36.5L15.1 52.0ZM0.4 28.2V25.7H13.4V28.2L8.5 28.5H5.1ZM16.6 28.2V25.7H29.3V28.2L24.9 28.5H21.3ZM32.3 28.2V25.7H41.1V28.2L37.4 28.5H36.3Z M50.4 52.6Q47.2 52.6 44.8 51.3Q42.4 50.1 41.0 47.8Q39.7 45.5 39.7 42.2Q39.7 38.8 41.0 36.4Q42.4 34.0 44.8 32.7Q47.1 31.4 50.1 31.4Q52.8 31.4 54.8 32.5Q56.8 33.5 57.9 35.5Q59.0 37.4 59.0 39.9Q59.0 40.7 58.9 41.3Q58.8 41.9 58.7 42.5H43.9V40.3H51.7Q52.4 39.9 52.7 39.4Q53.0 38.8 53.0 37.8Q53.0 36.4 52.6 35.5Q52.2 34.6 51.6 34.2Q50.9 33.7 50.1 33.7Q49.0 33.7 48.2 34.4Q47.4 35.2 47.0 36.8Q46.5 38.5 46.5 41.3Q46.5 43.8 47.3 45.4Q48.1 47.1 49.5 47.9Q50.8 48.6 52.5 48.6Q54.2 48.6 55.3 48.1Q56.5 47.5 57.4 46.4L59.1 47.8Q58.2 49.2 57.1 50.3Q55.9 51.4 54.2 52.0Q52.6 52.6 50.4 52.6Z M60.9 52.0V49.8L63.3 49.2Q63.3 48.2 63.3 47.2Q63.3 46.2 63.3 45.2Q63.3 44.2 63.3 43.4V27.2L60.6 26.6V24.7L68.5 23.1L70.0 23.3L69.9 28.8L69.7 35.4L70.0 35.6V48.4L69.8 48.5L69.0 52.4ZM75.8 52.6Q74.2 52.6 73.1 52.1Q72.0 51.6 71.2 50.7Q70.4 49.8 69.7 48.6H68.0L68.2 45.8Q69.4 47.2 70.5 48.0Q71.6 48.7 73.0 48.7Q74.2 48.7 75.2 48.0Q76.1 47.3 76.6 45.8Q77.1 44.4 77.1 42.0Q77.1 38.6 76.0 37.0Q74.9 35.5 73.0 35.5Q72.1 35.5 71.2 35.9Q70.4 36.4 69.6 37.0Q68.8 37.7 68.1 38.4L67.9 35.4H70.0Q70.7 34.0 71.6 33.2Q72.5 32.3 73.6 31.9Q74.7 31.4 76.2 31.4Q78.4 31.4 80.2 32.6Q82.0 33.8 83.0 36.2Q84.0 38.5 84.0 41.9Q84.0 45.2 82.9 47.6Q81.8 50.0 80.0 51.3Q78.1 52.6 75.8 52.6Z M94.2 52.6Q92.0 52.6 90.1 52.1Q88.3 51.6 86.9 51.0L87.0 46.0H90.3L91.1 51.0L89.1 51.1V49.0Q90.2 49.6 91.4 49.9Q92.6 50.2 94.1 50.2Q95.3 50.2 96.1 49.9Q97.0 49.6 97.3 49.0Q97.7 48.4 97.7 47.7Q97.7 46.7 96.9 46.0Q96.2 45.4 94.2 44.8L92.6 44.4Q90.9 43.8 89.6 43.0Q88.3 42.2 87.6 41.0Q86.9 39.8 86.9 38.1Q86.9 36.1 88.0 34.6Q89.0 33.1 91.0 32.3Q93.0 31.4 95.7 31.4Q97.6 31.4 99.2 31.8Q100.9 32.2 102.4 32.9L102.1 37.4H98.8L98.0 32.6H99.8V34.7Q98.9 34.2 97.9 34.0Q97.0 33.8 95.8 33.8Q94.2 33.8 93.4 34.4Q92.6 35.0 92.6 36.1Q92.6 37.0 93.3 37.6Q94.0 38.2 96.1 38.8L97.6 39.2Q99.5 39.8 100.8 40.7Q102.2 41.6 102.9 42.8Q103.6 44.0 103.6 45.7Q103.6 47.8 102.4 49.4Q101.3 50.9 99.2 51.7Q97.1 52.6 94.2 52.6Z M106.0 52.0V49.6L110.0 49.2H113.2L117.4 49.6V52.0ZM108.3 52.0Q108.4 50.8 108.4 49.3Q108.4 47.8 108.4 46.2Q108.4 44.7 108.4 43.4V41.3Q108.4 39.9 108.4 38.7Q108.4 37.6 108.3 36.4L105.7 36.2V34.1L113.6 31.7L115.1 31.9L115.0 37.5V43.4Q115.0 44.7 115.0 46.2Q115.0 47.8 115.1 49.3Q115.1 50.8 115.1 52.0ZM111.6 28.9Q110.1 28.9 109.1 27.9Q108.1 27.0 108.1 25.5Q108.1 24.1 109.1 23.2Q110.1 22.2 111.6 22.2Q113.1 22.2 114.1 23.2Q115.1 24.1 115.1 25.5Q115.1 27.0 114.1 27.9Q113.1 28.9 111.6 28.9Z M125.0 35.2V32.2H132.6V35.2ZM127.6 52.5Q124.8 52.5 123.2 51.1Q121.6 49.7 121.6 46.6Q121.6 45.6 121.6 44.6Q121.6 43.7 121.6 42.7V35.2H118.9V32.7L123.7 32.0L121.6 33.5L124.4 26.5H128.4L128.1 33.2L128.2 33.5V46.2Q128.2 47.6 128.9 48.2Q129.5 48.8 130.5 48.8Q131.1 48.8 131.6 48.7Q132.1 48.5 132.5 48.2L133.4 50.0Q133.0 50.6 132.3 51.2Q131.5 51.8 130.3 52.2Q129.2 52.5 127.6 52.5Z M145.4 52.6Q142.2 52.6 139.8 51.3Q137.4 50.1 136.0 47.8Q134.7 45.5 134.7 42.2Q134.7 38.8 136.0 36.4Q137.4 34.0 139.7 32.7Q142.1 31.4 145.0 31.4Q147.8 31.4 149.8 32.5Q151.8 33.5 152.8 35.5Q153.9 37.4 153.9 39.9Q153.9 40.7 153.9 41.3Q153.8 41.9 153.7 42.5H138.9V40.3H146.6Q147.4 39.9 147.7 39.4Q147.9 38.8 147.9 37.8Q147.9 36.4 147.6 35.5Q147.2 34.6 146.5 34.2Q145.9 33.7 145.0 33.7Q144.0 33.7 143.2 34.4Q142.4 35.2 141.9 36.8Q141.5 38.5 141.5 41.3Q141.5 43.8 142.3 45.4Q143.1 47.1 144.4 47.9Q145.8 48.6 147.4 48.6Q149.1 48.6 150.3 48.1Q151.5 47.5 152.4 46.4L154.1 47.8Q153.2 49.2 152.0 50.3Q150.8 51.4 149.2 52.0Q147.6 52.6 145.4 52.6Z  M180.1 52.6Q177.0 52.6 174.3 51.8Q171.6 51.0 169.6 49.2Q167.6 47.5 166.6 45.0Q165.5 42.4 165.5 39.0Q165.5 35.5 166.6 32.9Q167.7 30.3 169.7 28.5Q171.7 26.8 174.5 25.9Q177.2 25.0 180.5 25.0Q182.2 25.0 183.8 25.2Q185.4 25.4 186.7 25.9Q188.0 26.3 189.0 26.8L189.2 33.1H186.0L184.4 27.0L187.3 27.3V29.7Q185.9 28.6 184.5 28.1Q183.0 27.6 181.4 27.6Q179.0 27.6 177.1 28.8Q175.2 30.0 174.0 32.5Q172.8 35.0 172.8 38.8Q172.8 42.5 173.9 45.0Q175.0 47.5 176.9 48.8Q178.8 50.0 181.2 50.0Q182.8 50.0 183.9 49.6Q185.0 49.2 186.2 48.5L183.1 51.3V48.5Q183.1 46.1 183.1 43.8Q183.0 41.4 183.0 39.0H189.8Q189.8 41.4 189.8 43.8Q189.8 46.2 189.8 48.6V50.4Q187.8 51.4 185.4 52.0Q183.1 52.6 180.1 52.6ZM179.3 41.5V39.0H192.0V41.5L187.6 41.8H184.6Z M201.9 52.6Q199.1 52.6 197.5 50.9Q195.9 49.2 196.0 45.5L196.1 34.2L197.6 36.0L193.4 35.0V33.0L201.2 31.8L202.7 32.0L202.6 37.5V44.8Q202.6 46.6 203.2 47.4Q203.9 48.1 205.1 48.1Q206.0 48.1 206.8 47.7Q207.6 47.4 208.5 46.8Q209.3 46.2 210.0 45.5L210.5 47.6H209.2Q208.3 49.0 207.3 50.1Q206.2 51.3 204.9 51.9Q203.6 52.6 201.9 52.6ZM209.6 52.4 209.1 47.8 208.8 47.7 208.9 35.6 206.4 35.0V33.0L214.1 31.8L215.6 32.0L215.5 37.5V49.2L218.0 49.8V52.0Z M223.5 61.4Q222.2 61.4 221.2 61.0Q220.2 60.6 219.6 59.9Q219.0 59.2 218.8 58.4Q219.1 57.0 219.9 56.3Q220.8 55.6 222.1 55.6Q223.2 55.6 224.1 56.2Q225.0 56.7 225.6 57.8L226.5 59.6L225.2 59.6L225.5 59.2Q226.4 58.6 227.2 57.7Q228.0 56.8 228.8 55.7Q229.6 54.5 230.1 53.1L231.1 50.6L231.8 50.4L234.6 40.0L237.2 32.0H240.4L232.4 53.0Q231.4 55.6 230.2 57.5Q229.0 59.4 227.3 60.4Q225.7 61.4 223.5 61.4ZM229.5 55.8 219.7 32.0H227.3L232.3 48.0L233.4 48.4ZM218.5 34.2V32.0H231.0V34.2L227.1 34.8H222.4ZM233.5 34.2V32.0H241.8V34.2L238.1 34.8H237.2Z" fill="#1c1917"/></g></svg></a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-link" href="#services">What I do</a>
+      <a class="nav-link" href="#how">How it works</a>
+      <a class="nav-link" href="#about">Who I am</a>
+      <a class="button" href="#contact">Free mockup</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="eyebrow">Websites for Iowa City small businesses</p>
+      <h1 id="hero-title"><span>Need a website guy?</span><span class="accent">Hi, I'm Eric.</span></h1>
+      <p class="lead">I build clean, fast, mobile-friendly websites for restaurants, shops, trades and offices around Iowa City. My wife, a professional copy editor, writes the words.</p>
+      <div class="hero-actions">
+        <a class="button button-large" href="#contact">Get a free homepage mockup</a>
+        <p class="call">or call <a class="phone-link" href="tel:+13193822960">(319) 382-2960</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <h2 id="services-title">What do you do?</h2>
+      <ul class="services">
+        <li>
+          <h3 class="item-title">Website redesigns</h3>
+          <p class="item-text">A modern site built around what your customers need to find.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Mobile-friendly by default</h3>
+          <p class="item-text">Easy to read on any phone, with tap-to-call and directions.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Copywriting</h3>
+          <p class="item-text">A professional copy editor writes the words, so you don't have to hand over finished text.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Online ordering &amp; shops</h3>
+          <p class="item-text">Sell products, gift cards or orders with a Shopify store you can run yourself.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Booking &amp; contact forms</h3>
+          <p class="item-text">Simple forms that turn visitors into bookings and calls.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Found on Google</h3>
+          <p class="item-text">Clean structure and accurate info so locals can find you.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Works with your existing systems</h3>
+          <p class="item-text">Your site connects to the tools you already use, like booking software, point-of-sale, online ordering or your email list.</p>
+        </li>
+        <li>
+          <h3 class="item-title">Ongoing updates</h3>
+          <p class="item-text">A $75-a-month care plan covers hosting, small edits and image updates.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">How does it work?</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-number" aria-hidden="true">1</span>
+          <div class="step-body">
+            <h3 class="item-title">You get a free homepage mockup</h3>
+            <p class="item-text">I sketch your new homepage from your real information, so you can see the idea before deciding anything.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number" aria-hidden="true">2</span>
+          <div class="step-body">
+            <h3 class="item-title">We have a quick conversation</h3>
+            <p class="item-text">We talk through what you'd keep, what's missing, and what the site needs to do.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number" aria-hidden="true">3</span>
+          <div class="step-body">
+            <h3 class="item-title">I build it, you review it</h3>
+            <p class="item-text">I build the full site and my wife writes the words. You review it before anything goes live.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number" aria-hidden="true">4</span>
+          <div class="step-body">
+            <h3 class="item-title">Your site goes live</h3>
+            <p class="item-text">It launches on your own domain.</p>
+            <p class="item-text">Most sites launch in 2 to 4 weeks.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <h2 id="about-title">Who are you?</h2>
+      <div class="about">
+        <img class="photo-slot photo" src="eric.jpg" alt="Eric Johnson" width="200" height="200">
+        <div class="about-text">
+          <p class="about-name">I'm Eric Johnson.</p>
+          <p class="item-text">I'm a web developer with more than 20 years of experience. I've lived in the Iowa City area for 25 years and graduated from the University of Iowa.</p>
+          <ul class="about-points">
+            <li>One point of contact from first sketch to launch</li>
+            <li>Local, so we can meet in person</li>
+            <li>You see your homepage before you commit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 id="work-title">What have you built?</h2>
+      <ul class="work">
+        <li class="placeholder-box">Placeholder: screenshot and name of a site you built</li>
+        <li class="placeholder-box">Placeholder: screenshot and name of a site you built</li>
+        <li class="placeholder-box">Placeholder: screenshot and name of a site you built</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt cost" id="cost" aria-labelledby="cost-title">
+    <div class="wrap">
+      <h2 id="cost-title">What does it cost?</h2>
+      <p class="cost-intro">Every package includes a free homepage mockup first, a mobile-friendly design, and words written by a professional copy editor.</p>
+      <!-- PLACEHOLDER: package names, contents and prices are a draft. Replace each "Placeholder:" price with your real number. -->
+      <ul class="price-cards">
+        <li class="price-card">
+          <h3 class="price-name">Starter</h3>
+          <p class="price-who">For a business that needs one clear, good-looking page.</p>
+          <p class="price"><span class="price-from">from</span> <span class="price-amount">$1,200</span></p>
+          <ul class="price-list">
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A one-page site</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Mobile-friendly</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Contact form and tap-to-call</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Words written by a professional copy editor</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Basic Google setup</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Edit your own site whenever you like</span></li>
+          </ul>
+          <a class="button price-button" href="#contact">Ask about starter</a>
+        </li>
+        <li class="price-card">
+          <h3 class="price-name">Standard</h3>
+          <p class="price-who">For a business replacing an outdated site.</p>
+          <p class="price"><span class="price-from">from</span> <span class="price-amount">$2,400</span></p>
+          <ul class="price-list">
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Up to 6 pages</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Everything in Starter</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Booking or contact forms</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Connects to tools you already use</span></li>
+          </ul>
+          <a class="button price-button" href="#contact">Ask about standard</a>
+        </li>
+        <li class="price-card">
+          <h3 class="price-name">Store</h3>
+          <p class="price-who">For selling products, gift cards or orders online.</p>
+          <p class="price"><span class="price-from">from</span> <span class="price-amount">$3,500</span></p>
+          <ul class="price-list">
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Everything in Standard</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A Shopify store you can run yourself</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Online ordering or gift cards</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Help adding your first products</span></li>
+          </ul>
+          <a class="button price-button" href="#contact">Ask about store</a>
+        </li>
+      </ul>
+      <div class="care-plan">
+        <div>
+          <h3 class="price-name">Care plan</h3>
+          <p class="price-who">Ongoing updates after launch, so your site stays current.</p>
+        </div>
+        <div class="care-details">
+          <p class="price-line"><span class="price-amount">$75</span> <span class="price-from">a month</span></p>
+          <p class="price-who">Includes hosting, small edits and image updates.</p>
+        </div>
+      </div>
+      <p class="extra-work">You can always make changes yourself. If you'd rather I do it, or you want something outside your package, I charge $99 an hour.</p>
+      <p class="cost-note">Whichever you pick, you see your new homepage before you commit to anything.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="contact-intro">
+        <h2 id="contact-title">Want to see your new homepage?</h2>
+        <p>Tell me a little about your business and I'll put together a free homepage mockup. Or just call, text or email.</p>
+        <a class="contact-link" href="tel:+13193822960">Call or text (319) 382-2960</a>
+        <a class="contact-link contact-email" href="mailto:eric@iowacitywebsiteguy.com">eric@iowacitywebsiteguy.com</a>
+      </div>
+      <!-- PLACEHOLDER: this form does not send anywhere yet. Once hosting is chosen,
+           set action="" to a form service (for example Netlify Forms or Formspree)
+           so each request lands in your email. -->
+      <form class="contact-form" method="post" action="#" aria-describedby="form-status">
+        <label><span>Your name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label><span>Business name <span class="optional">(optional)</span></span>
+          <input type="text" name="business" autocomplete="organization">
+        </label>
+        <label><span>Phone or email</span>
+          <input type="text" name="contact" autocomplete="email" required>
+        </label>
+        <label><span>What does your website need? <span class="optional">(optional)</span></span>
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <button class="submit" type="submit">Ask for my free mockup</button>
+        <span class="placeholder" id="form-status">Placeholder: this form starts sending to your email once the site is hosted</span>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 Iowa City Website Guy · Eric Johnson</p>
+    <p>Websites for local small businesses</p>
+  </div>
+</footer>
+</body>
+</html>

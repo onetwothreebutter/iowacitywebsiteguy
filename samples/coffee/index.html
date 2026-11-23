@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little Bend Coffee | Sample site by Iowa City Website Guy</title>
+<meta name="description" content="A sample coffee shop website built by Iowa City Website Guy. Little Bend Coffee is a made-up business.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2b1d16">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2562b'/%3E%3Cpath d='M16 26h28v10a12 12 0 0 1-12 12h-4a12 12 0 0 1-12-12z' fill='%23f7f0e6'/%3E%3Cpath d='M44 29h3a5 5 0 0 1 0 10h-4' fill='none' stroke='%23f7f0e6' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+:root {
+  --espresso: #2b1d16;
+  --roast: #4a3226;
+  --cream: #f7f0e6;
+  --paper: #fffaf3;
+  --clay: #c2562b;
+  --clay-dark: #9e4220;
+  --sage: #6f7f5e;
+  --line: #e4d8c7;
+  --muted: #6b5a4e;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter: 24px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--paper); color: var(--espresso); font-family: var(--sans); font-size: 17px; line-height: 1.55; }
+a { color: var(--clay-dark); }
+:focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; }
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+
+.sample-banner { background: #fff4d1; color: #6b4500; border-bottom: 1px dashed #b98a1e; font-size: 14px; text-align: center; padding: 8px var(--gutter); }
+.sample-banner a { color: #6b4500; font-weight: 700; }
+
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--clay); color: #fff; font-weight: 700; text-decoration: none; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.button:hover { background: var(--clay-dark); color: #fff; }
+.button-ghost { background: transparent; color: var(--cream); box-shadow: inset 0 0 0 2px rgba(247,240,230,.6); }
+.button-ghost:hover { background: rgba(247,240,230,.12); color: var(--cream); }
+
+/* Header */
+.site-header { background: var(--espresso); color: var(--cream); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream); text-decoration: none; font-family: var(--serif); font-size: 22px; font-weight: 700; }
+.brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+.nav { display: flex; align-items: center; gap: 6px 22px; flex-wrap: wrap; font-weight: 500; }
+.nav a:not(.button) { color: var(--cream); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.nav a:not(.button):hover { color: #f2b48f; }
+
+/* Hero */
+.hero { background: var(--espresso); color: var(--cream); padding: 48px 0 72px; overflow: hidden; }
+.hero .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 40px 56px; }
+.hero-text { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.open-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(247,240,230,.1); font-size: 15px; font-weight: 500; }
+.open-dot { width: 10px; height: 10px; border-radius: 50%; background: #8fbf6a; }
+.open-pill.closed .open-dot { background: #e0a14e; }
+.hero h1 { font-size: clamp(2.8rem, 6.5vw, 5rem); line-height: 1.02; }
+.hero h1 em { font-style: normal; color: #f2b48f; }
+.hero p.lead { font-size: 20px; color: #e8dccb; max-width: 520px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-art { flex: 1 1 320px; min-width: 0; display: flex; justify-content: center; }
+.hero-art svg { width: 100%; max-width: 420px; height: auto; }
+
+/* Quick info strip */
+.quick { background: var(--cream); border-bottom: 1px solid var(--line); }
+.quick .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 0; }
+.quick-item { display: flex; gap: 12px; align-items: flex-start; padding: 20px 16px 20px 0; }
+.quick-item svg { width: 26px; height: 26px; flex-shrink: 0; stroke: var(--clay); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+.quick-item b { display: block; }
+.quick-item span { color: var(--muted); font-size: 15px; }
+
+/* Sections */
+.section { padding: 80px 0; }
+.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 32px; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--clay); margin-bottom: 8px; }
+h2 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); line-height: 1.05; }
+.section-head p { color: var(--muted); max-width: 420px; }
+
+/* Menu */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.tab { min-height: 44px; padding: 0 18px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--espresso); font: inherit; font-weight: 700; cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--espresso); border-color: var(--espresso); color: var(--cream); }
+.menu-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 0 48px; }
+.menu-panel[hidden] { display: none; }
+.menu-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+.menu-item h3 { font-size: 18px; font-weight: 700; }
+.menu-item .price { font-weight: 700; font-variant-numeric: tabular-nums; }
+.menu-item p { grid-column: 1 / -1; color: var(--muted); font-size: 15px; }
+.tag { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: #e7eddf; color: #4b5a3c; font-size: 12px; font-weight: 700; vertical-align: 2px; }
+
+/* Order */
+.order { background: var(--clay); color: #fff; }
+.order .wrap { display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center; }
+.order-text { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.order h2 { color: #fff; }
+.order p { font-size: 19px; color: #fde9de; max-width: 520px; }
+.order .button { background: var(--espresso); }
+.order .button:hover { background: #000; }
+.steps { flex: 1 1 340px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.steps li { display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,.12); border-radius: 14px; padding: 14px 18px; font-weight: 500; }
+.steps .n { width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; background: #fff; color: var(--clay-dark); font-family: var(--serif); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* Story + cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.card svg { width: 40px; height: 40px; stroke: var(--clay); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.card h3 { font-family: var(--serif); font-size: 22px; }
+.card p { color: var(--muted); }
+.card a { font-weight: 700; margin-top: auto; }
+
+/* Visit */
+.visit { background: var(--cream); }
+.visit-grid { display: flex; flex-wrap: wrap; gap: 32px 48px; }
+.hours { flex: 1 1 340px; min-width: 0; }
+.hours table { width: 100%; border-collapse: collapse; }
+.hours td { padding: 10px 0; border-top: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.hours tr.today td { font-weight: 700; color: var(--clay-dark); }
+.where { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.map { position: relative; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: #efe6d8; }
+.map svg { width: 100%; height: 100%; display: block; }
+.where-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.button-outline { background: transparent; color: var(--espresso); box-shadow: inset 0 0 0 2px var(--espresso); }
+.button-outline:hover { background: var(--espresso); color: var(--cream); }
+
+/* Footer */
+.site-footer { background: var(--espresso); color: #d9cbb8; padding: 36px 0 110px; font-size: 15px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; }
+.site-footer a { color: var(--cream); }
+.credit { border-top: 1px solid #4a3226; margin-top: 8px; padding-top: 16px; width: 100%; }
+
+/* Phone action bar */
+.action-bar { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 20; display: none; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 6px; border-radius: 18px; background: var(--espresso); box-shadow: 0 10px 30px rgba(43,29,22,.35); }
+.action-bar a { min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border-radius: 12px; color: var(--cream); text-decoration: none; font-size: 13px; font-weight: 700; }
+.action-bar a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.action-bar a.primary { background: var(--clay); }
+
+@media (max-width: 720px) {
+  :root { --gutter: 20px; }
+  .nav { display: none; }
+  .hero { padding: 36px 0 48px; }
+  .hero p.lead { font-size: 18px; }
+  .hero-art svg { max-width: 300px; }
+  .section { padding: 60px 0; }
+  .action-bar { display: grid; }
+  .site-footer { padding-bottom: 120px; }
+}
+@media (min-width: 721px) { .site-footer { padding-bottom: 36px; } }
+</style>
+</head>
+<body>
+
+<div class="sample-banner">Sample site. Little Bend Coffee is a made-up business, built by <a href="https://iowacitywebsiteguy.com/">Iowa City Website Guy</a> to show what a local café site can do.</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#c2562b"/><path d="M16 26h28v10a12 12 0 0 1-12 12h-4a12 12 0 0 1-12-12z" fill="#f7f0e6"/><path d="M44 29h3a5 5 0 0 1 0 10h-4" fill="none" stroke="#f7f0e6" stroke-width="4"/><path d="M24 14c-2 3 2 5 0 8M32 12c-2 3 2 5 0 8" fill="none" stroke="#f7f0e6" stroke-width="3" stroke-linecap="round"/></svg>
+      Little Bend Coffee
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#visit">Hours &amp; location</a>
+      <a href="#more">Catering</a>
+      <a class="button" href="#order">Order ahead</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="open-pill" id="open-status"><span class="open-dot" aria-hidden="true"></span><span id="open-text">Open today 6:30 AM to 6 PM</span></p>
+        <h1 id="hero-title">Good coffee, <em>right around the bend.</em></h1>
+        <p class="lead">Small-batch espresso, house-made pastries and a sunny spot to sit. Order ahead and skip the line on your way to work.</p>
+        <div class="hero-actions">
+          <a class="button" href="#order">Order ahead</a>
+          <a class="button button-ghost" href="#menu">See the menu</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 360">
+          <circle cx="200" cy="190" r="160" fill="#4a3226"/>
+          <ellipse cx="200" cy="300" rx="130" ry="18" fill="#1d130e"/>
+          <path d="M100 160h180v60a70 70 0 0 1-70 70h-40a70 70 0 0 1-70-70z" fill="#f7f0e6"/>
+          <path d="M280 175h18a32 32 0 0 1 0 64h-26" fill="none" stroke="#f7f0e6" stroke-width="16"/>
+          <ellipse cx="190" cy="160" rx="90" ry="16" fill="#c2562b"/>
+          <path d="M170 160c10-10 30-10 40 0c-10 8-30 8-40 0z" fill="#f2b48f"/>
+          <path d="M150 120c-12 -16 12 -24 0 -44M190 112c-12 -16 12 -24 0 -44M230 120c-12 -16 12 -24 0 -44" fill="none" stroke="#e8dccb" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="quick">
+    <div class="wrap">
+      <div class="quick-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Open every day</b><span>6:30 AM weekdays, 7 AM weekends</span></div></div>
+      <div class="quick-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Downtown Iowa City</b><span>Sample address, Iowa City, IA</span></div></div>
+      <div class="quick-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b><a href="tel:+13195550142">(319) 555-0142</a></b><span>Sample number</span></div></div>
+      <div class="quick-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18M7 15h2M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg><div><b>Free Wi-Fi &amp; outlets</b><span>Stay as long as you like</span></div></div>
+    </div>
+  </div>
+
+  <section class="section" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Menu</p><h2 id="menu-title">What we're pouring</h2></div>
+        <p>Oat, almond and whole milk at no extra charge. Ask about our seasonal drink.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Menu sections">
+        <button class="tab" role="tab" id="tab-coffee" aria-controls="panel-coffee" aria-selected="true">Coffee</button>
+        <button class="tab" role="tab" id="tab-tea" aria-controls="panel-tea" aria-selected="false" tabindex="-1">Tea &amp; more</button>
+        <button class="tab" role="tab" id="tab-bakery" aria-controls="panel-bakery" aria-selected="false" tabindex="-1">Bakery</button>
+      </div>
+      <div class="menu-panel" role="tabpanel" id="panel-coffee" aria-labelledby="tab-coffee">
+        <div class="menu-item"><h3>Drip coffee</h3><span class="price">$2.75</span><p>Rotating single-origin, brewed fresh every hour.</p></div>
+        <div class="menu-item"><h3>Latte</h3><span class="price">$4.75</span><p>Double shot with steamed milk. Add vanilla or honey for 50¢.</p></div>
+        <div class="menu-item"><h3>Cold brew<span class="tag">Favorite</span></h3><span class="price">$4.25</span><p>Steeped 18 hours, smooth and chocolatey.</p></div>
+        <div class="menu-item"><h3>Cortado</h3><span class="price">$4.00</span><p>Equal parts espresso and warm milk.</p></div>
+        <div class="menu-item"><h3>Maple oat latte<span class="tag">Seasonal</span></h3><span class="price">$5.50</span><p>Oat milk, real maple and a pinch of cinnamon.</p></div>
+        <div class="menu-item"><h3>Americano</h3><span class="price">$3.25</span><p>Espresso and hot water, hot or iced.</p></div>
+      </div>
+      <div class="menu-panel" role="tabpanel" id="panel-tea" aria-labelledby="tab-tea" hidden>
+        <div class="menu-item"><h3>Chai latte</h3><span class="price">$4.75</span><p>House-made chai concentrate with your choice of milk.</p></div>
+        <div class="menu-item"><h3>Loose-leaf tea</h3><span class="price">$3.00</span><p>Earl grey, green, chamomile or peppermint.</p></div>
+        <div class="menu-item"><h3>Hot chocolate</h3><span class="price">$3.75</span><p>Dark chocolate and steamed milk. Kids' size $2.50.</p></div>
+        <div class="menu-item"><h3>Matcha latte</h3><span class="price">$5.00</span><p>Ceremonial-grade matcha, hot or iced.</p></div>
+      </div>
+      <div class="menu-panel" role="tabpanel" id="panel-bakery" aria-labelledby="tab-bakery" hidden>
+        <div class="menu-item"><h3>Butter croissant</h3><span class="price">$3.50</span><p>Baked in-house every morning.</p></div>
+        <div class="menu-item"><h3>Morning glory muffin<span class="tag">Vegan</span></h3><span class="price">$3.25</span><p>Carrot, apple, coconut and walnuts.</p></div>
+        <div class="menu-item"><h3>Breakfast sandwich</h3><span class="price">$6.50</span><p>Egg, cheddar and bacon or spinach on a toasted English muffin.</p></div>
+        <div class="menu-item"><h3>Cinnamon roll</h3><span class="price">$4.00</span><p>Saturdays and Sundays only, until they're gone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section order" id="order" aria-labelledby="order-title">
+    <div class="wrap">
+      <div class="order-text">
+        <p class="eyebrow" style="color:#fde9de">Order ahead</p>
+        <h2 id="order-title">Skip the line.</h2>
+        <p>Order from your phone and your drink is waiting on the pickup shelf. Pay online, earn a free drink every ten visits.</p>
+        <a class="button" href="#order" onclick="return false;" aria-describedby="order-note">Start an order</a>
+        <p id="order-note" style="font-size:14px;color:#fde9de">On a real site this button opens the shop's online ordering, such as Square or Toast.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="n">1</span>Pick your drink and pastry</li>
+        <li><span class="n">2</span>Choose a pickup time</li>
+        <li><span class="n">3</span>Grab it from the shelf by the door</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="more" aria-labelledby="more-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">More from the shop</p><h2 id="more-title">Beyond the counter</h2></div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="36" height="26" rx="3"/><path d="M6 22h36M18 14v-4h12v4"/></svg>
+          <h3>Office catering</h3>
+          <p>Coffee boxes for 10, pastry trays and breakfast sandwiches, delivered downtown.</p>
+          <a href="#visit">Request a quote</a>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="24" rx="4"/><path d="M6 20h36M14 29h8"/></svg>
+          <h3>Gift cards</h3>
+          <p>Send one by email in a minute, or pick up a printed card at the register.</p>
+          <a href="#order">Buy a gift card</a>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38V18l14-8 14 8v20"/><path d="M20 38V27h8v11"/></svg>
+          <h3>Beans to brew at home</h3>
+          <p>Whole bean or ground to order. Ships anywhere in Iowa, or pick up in store.</p>
+          <a href="#order">Shop beans</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Visit</p><h2 id="visit-title">Hours &amp; location</h2></div>
+      </div>
+      <div class="visit-grid">
+        <div class="hours">
+          <table aria-label="Opening hours">
+            <tbody id="hours-body">
+              <tr data-day="1"><td>Monday</td><td>6:30 AM – 6 PM</td></tr>
+              <tr data-day="2"><td>Tuesday</td><td>6:30 AM – 6 PM</td></tr>
+              <tr data-day="3"><td>Wednesday</td><td>6:30 AM – 6 PM</td></tr>
+              <tr data-day="4"><td>Thursday</td><td>6:30 AM – 8 PM</td></tr>
+              <tr data-day="5"><td>Friday</td><td>6:30 AM – 8 PM</td></tr>
+              <tr data-day="6"><td>Saturday</td><td>7 AM – 6 PM</td></tr>
+              <tr data-day="0"><td>Sunday</td><td>7 AM – 4 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="where">
+          <div class="map" role="img" aria-label="Illustrated map of downtown Iowa City">
+            <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="480" height="300" fill="#efe6d8"/>
+              <path d="M-10 250 C 80 230, 120 280, 210 260 S 380 210, 490 240" fill="none" stroke="#a9c3cf" stroke-width="26"/>
+              <g stroke="#fffaf3" stroke-width="14"><path d="M0 70h480M0 160h480M90 0v300M220 0v300M350 0v300"/></g>
+              <g fill="#e2d4c0"><rect x="104" y="84" width="102" height="62" rx="6"/><rect x="234" y="84" width="102" height="62" rx="6"/><rect x="364" y="84" width="120" height="62" rx="6"/><rect x="104" y="174" width="102" height="50" rx="6"/><rect x="0" y="84" width="76" height="62" rx="6"/></g>
+              <rect x="234" y="174" width="102" height="50" rx="6" fill="#cfdcc3"/>
+              <g transform="translate(285 115)"><circle r="22" fill="#c2562b"/><circle r="8" fill="#fffaf3"/></g>
+            </svg>
+          </div>
+          <p>Across from the park, with bike racks out front and two-hour street parking. Sample location for this demo.</p>
+          <div class="where-actions">
+            <a class="button" href="#visit">Get directions</a>
+            <a class="button button-outline" href="tel:+13195550142">Call (319) 555-0142</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div><b style="color:#f7f0e6">Little Bend Coffee</b><br>Downtown Iowa City (sample)</div>
+    <div>Follow along: <a href="#top">Instagram</a> · <a href="#top">Facebook</a></div>
+    <p class="credit">This is a sample site. Little Bend Coffee isn't a real business. Website by <a href="https://iowacitywebsiteguy.com/">Iowa City Website Guy</a>.</p>
+  </div>
+</footer>
+
+<nav class="action-bar" aria-label="Quick actions">
+  <a href="tel:+13195550142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Directions</a>
+  <a class="primary" href="#order"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Order ahead</a>
+</nav>
+
+<script>
+(function () {
+  // Menu tabs
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        select(next); next.focus();
+      }
+    });
+  });
+
+  // Open now, using Iowa City time
+  var hours = { 0: [7, 16], 1: [6.5, 18], 2: [6.5, 18], 3: [6.5, 18], 4: [6.5, 20], 5: [6.5, 20], 6: [7, 18] };
+  function fmt(h) { var hr = Math.floor(h), m = Math.round((h - hr) * 60), ap = hr >= 12 ? 'PM' : 'AM', h12 = hr % 12 || 12; return h12 + (m ? ':' + String(m).padStart(2, '0') : '') + ' ' + ap; }
+  try {
+    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+    var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
+    var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    var now = (parseInt(get('hour'), 10) % 24) + parseInt(get('minute'), 10) / 60;
+    var today = hours[day], pill = document.getElementById('open-status'), text = document.getElementById('open-text');
+    if (now >= today[0] && now < today[1]) { text.textContent = 'Open now until ' + fmt(today[1]); }
+    else if (now < today[0]) { pill.classList.add('closed'); text.textContent = 'Opens today at ' + fmt(today[0]); }
+    else { var nd = (day + 1) % 7; pill.classList.add('closed'); text.textContent = 'Closed now. Opens tomorrow at ' + fmt(hours[nd][0]); }
+    var row = document.querySelector('#hours-body tr[data-day="' + day + '"]');
+    if (row) { row.classList.add('today'); row.firstElementChild.textContent += ' (today)'; }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
