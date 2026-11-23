@@ -238,6 +238,11 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
   font: inherit; font-size: 16px; font-weight: 400;
 }
 .contact-form input { min-height: 46px; }
+.contact-form .honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { margin: 0; font-size: 15px; }
+.form-status:empty { display: none; }
+.form-status.ok { color: #166534; font-weight: 700; }
+.form-status.err { color: #b91c1c; }
 .contact-form textarea { min-height: 120px; padding: 10px 12px; resize: vertical; }
 .submit {
   min-height: 54px; border: 0; border-radius: 4px;
@@ -480,10 +485,13 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
         <a class="contact-link" href="tel:+13193822960">Call or text (319) 382-2960</a>
         <a class="contact-link contact-email" href="mailto:eric@iowacitywebsiteguy.com">eric@iowacitywebsiteguy.com</a>
       </div>
-      <!-- PLACEHOLDER: this form does not send anywhere yet. Once hosting is chosen,
-           set action="" to a form service (for example Netlify Forms or Formspree)
-           so each request lands in your email. -->
-      <form class="contact-form" method="post" action="#" aria-describedby="form-status">
+      <!-- Sends through FormSubmit (formsubmit.co) to eric@iowacitywebsiteguy.com.
+           The first submission sends an activation email; click it once. -->
+      <form class="contact-form" method="post" action="https://formsubmit.co/eric@iowacitywebsiteguy.com" aria-describedby="form-status">
+        <input type="hidden" name="_subject" value="New mockup request from iowacitywebsiteguy.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label><span>Your name</span>
           <input type="text" name="name" autocomplete="name" required>
         </label>
@@ -497,7 +505,7 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
           <textarea name="message" rows="4"></textarea>
         </label>
         <button class="submit" type="submit">Ask for my free mockup</button>
-        <span class="placeholder" id="form-status">Placeholder: this form starts sending to your email once the site is hosted</span>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -510,5 +518,38 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
     <p>Websites for local small businesses</p>
   </div>
 </footer>
+<script>
+(function () {
+  var form = document.querySelector('.contact-form');
+  if (!form || !window.fetch) return;
+  var status = document.getElementById('form-status');
+  var button = form.querySelector('.submit');
+  var label = button.textContent;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (form._honey.value) return;
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    status.className = 'form-status';
+    status.textContent = '';
+    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok || String(res.d.success) !== 'true') throw new Error(res.d.message || 'Send failed');
+        form.reset();
+        status.className = 'form-status ok';
+        status.textContent = "Thanks! Your message was sent. I'll be in touch soon.";
+      })
+      .catch(function () {
+        status.className = 'form-status err';
+        status.innerHTML = 'Sorry, that didn\u2019t send. Please call or text <a href="tel:+13193822960">(319) 382-2960</a> or email <a href="mailto:eric@iowacitywebsiteguy.com">eric@iowacitywebsiteguy.com</a>.';
+      })
+      .then(function () { button.disabled = false; button.textContent = label; });
+  });
+})();
+</script>
 </body>
 </html>
