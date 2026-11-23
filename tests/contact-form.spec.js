@@ -72,3 +72,11 @@ test('thanks page links back home and shows the phone number', async ({ page }) 
   await expect(page.getByRole('link', { name: 'Back to the homepage' })).toHaveAttribute('href', '/');
   await expect(page.getByRole('link', { name: '(319) 382-2960' })).toHaveAttribute('href', 'tel:+13193822960');
 });
+
+test('Brightfield case study card shows its image and links out', async ({ page }) => {
+  await page.goto('/');
+  const card = page.locator('#work .work-card').filter({ hasText: 'Brightfield Studio' });
+  await expect(card.getByRole('link', { name: 'Brightfield Studio' })).toHaveAttribute('href', 'https://brightfield.studio');
+  const loaded = await card.locator('img').evaluate(async (img) => { img.loading = 'eager'; await img.decode(); return img.naturalWidth; });
+  expect(loaded).toBeGreaterThan(0);
+});
