@@ -90,3 +90,12 @@ test('coffee sample card is labeled as a sample and opens the sample site', asyn
   await page.goto('/samples/coffee/');
   await expect(page.getByText('Little Bend Coffee is a made-up business')).toBeVisible();
 });
+
+test('share card and favicons are present', async ({ page, request }) => {
+  await page.goto('/');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://iowacitywebsiteguy.com/share.png');
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
+  for (const file of ['/share.png', '/favicon.ico', '/favicon.svg', '/apple-touch-icon.png']) {
+    expect((await request.get(file)).status(), file).toBe(200);
+  }
+});
