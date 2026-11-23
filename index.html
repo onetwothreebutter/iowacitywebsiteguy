@@ -238,7 +238,6 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
   font: inherit; font-size: 16px; font-weight: 400;
 }
 .contact-form input { min-height: 46px; }
-.contact-form .honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .form-status { margin: 0; font-size: 15px; }
 .form-status:empty { display: none; }
 .form-status.ok { color: #166534; font-weight: 700; }
@@ -491,7 +490,6 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
         <input type="hidden" name="_subject" value="New mockup request from iowacitywebsiteguy.com">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label><span>Your name</span>
           <input type="text" name="name" autocomplete="name" required>
         </label>
@@ -527,27 +525,35 @@ h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -
   var label = button.textContent;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (form._honey.value) return;
     button.disabled = true;
     button.textContent = 'Sending...';
     status.className = 'form-status';
     status.textContent = '';
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
     fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
+      body: new FormData(form),
+      signal: ctrl ? ctrl.signal : undefined
     }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
       .then(function (res) {
+        if (/activat/i.test(res.d.message || '')) {
+          status.className = 'form-status ok';
+          status.textContent = 'Form not activated yet. FormSubmit just emailed an activation link to eric@iowacitywebsiteguy.com.';
+          return;
+        }
         if (!res.ok || String(res.d.success) !== 'true') throw new Error(res.d.message || 'Send failed');
         form.reset();
         status.className = 'form-status ok';
         status.textContent = "Thanks! Your message was sent. I'll be in touch soon.";
       })
-      .catch(function () {
+      .catch(function (err) {
+        if (window.console) console.error('Contact form:', err);
         status.className = 'form-status err';
         status.innerHTML = 'Sorry, that didn\u2019t send. Please call or text <a href="tel:+13193822960">(319) 382-2960</a> or email <a href="mailto:eric@iowacitywebsiteguy.com">eric@iowacitywebsiteguy.com</a>.';
       })
-      .then(function () { button.disabled = false; button.textContent = label; });
+      .then(function () { clearTimeout(timer); button.disabled = false; button.textContent = label; });
   });
 })();
 </script>
